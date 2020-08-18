@@ -1,0 +1,48 @@
+<div class="alert alert-danger" *ngIf="invalidLogin">{{errorMessage}}</div>
+
+<div class="row mt-5">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="card border-info">
+            <div class="card-header">
+                <h4 class="card-title text-info">LOGIN</h4>
+            </div>
+            <div class="card-body">
+                <div style="text-align: center; color:rgba(243, 174, 174, 0.801)">
+                    <i class="fas fa-user-circle fa-5x"></i>
+                </div>
+
+                <div class="input-group mt-4 mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                        aria-describedby="basic-addon1" [(ngModel)]="username">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-key"></i></span>
+                    </div>
+                    <input type="password" class="form-control" placeholder="Password" aria-label="Password"
+                        aria-describedby="basic-addon1" pPassword [(ngModel)]="password">
+                </div>
+                <button (click)="handleJWTAuthLogin()" class=" form-control btn btn-primary">Login &nbsp;<i
+                        class="fas fa-sign-in-alt" aria-hidden="true"></i></button>
+                <footer class="footer mt-2 float-right"><a routerLink="">Forgot Password?</a></footer>
+                <!-- <hr class="my-4"> -->
+            </div>
+            <!-- <div class="card-footer">
+                <ul class="list-inline">
+                        <li class="list-inline-item">
+                                <button  class="btn btn-primary"><i class="fas fa-facebook-official" aria-hidden="true"></i>Facebook</button>
+                        </li>
+                        <li class="list-inline-item">
+                                <button  class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i>Google</button>
+                        </li>
+                    </ul>
+          </div> -->
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>

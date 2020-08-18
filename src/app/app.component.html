@@ -1,0 +1,123 @@
+<!-- <app-welcome></app-welcome> -->
+<!-- <app-login></app-login> -->
+<!-- <app-menu></app-menu> -->
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>BRAND</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>Thoughts, Stories And Much More</p>
+            <!-- <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="#">Home 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">About</a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li> -->
+            <li>
+                <a routerLink="/dashboard" *ngIf="jwtAuthenticationService.isLoggedIn()"><i class="fas fa-tachometer-alt" aria-hidden="true"></i>&nbsp;Dashboard</a>
+            </li>
+            <li>
+                <a routerLink="/home"><i class="fas fa-home"></i>&nbsp;Home</a>
+            </li>
+            <li>
+                <a routerLink="/thoughts"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;Thoughts</a>
+            </li>
+            <li>
+                <a routerLink="/articles"><i class="fas fa-newspaper-o-alt" aria-hidden="true"></i>&nbsp;Articles</a>
+            </li>
+            <!-- <li>
+                <a><i class="fas fa-home"></i>&nbsp;Posts</a>
+            </li> 
+            <li>
+                <a routerLink="/files"><i class="fa fa-file" aria-hidden="true"></i>&nbsp;Files</a>
+            </li>
+            <li>
+                <a routerLink="/notifications"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Notifications</a>
+            </li> 
+            <li>
+                <a *ngIf="jwtAuthenticationService.isLoggedIn()"><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp;Birthdays</a>
+            </li>-->
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <!-- <li>
+                <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+            </li> -->
+            <li>
+                <a class="article">All Rights Reserved 2019 @codewithjitin.blogspot.com</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Content Holder -->
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="navbar-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                    <a class="nav-link" *ngIf="!jwtAuthenticationService.isLoggedIn()" routerLink="/login"><i class="fas fa-user-plus" aria-hidden="true"></i>&nbsp;Sign Up</a>
+                                </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" *ngIf="!jwtAuthenticationService.isLoggedIn()" routerLink="/login"><i class="fas fa-sign-in-alt" aria-hidden="true"></i>&nbsp;Login</a>
+                        </li>
+                        <li class="nav-item">
+                                <p-splitButton *ngIf="jwtAuthenticationService.isLoggedIn()" label="&nbsp;{{displayName}}" (onClick)="userProfile()" icon="pi pi-user" [model]="userActions" styleClass="p-button-secondary"></p-splitButton>
+                            <!-- <a class="nav-link" *ngIf="jwtAuthenticationService.isLoggedIn()" routerLink="/logout"><i class="fas fa-sign-out-alt" aria-hidden="true" style="color:red"></i>&nbsp;Logout</a> -->
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Page</a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- <div class="container"> -->
+            <router-outlet>
+
+            </router-outlet>
+        <!-- </div> -->
+    </div>
+</div>
+
+
+<!-- <app-footer></app-footer> -->
